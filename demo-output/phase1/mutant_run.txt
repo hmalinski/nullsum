@@ -1,0 +1,64 @@
+[mutant seed=2] sequence: 170 ops, 6 sentinel pays
+[mutant seed=2] VIOLATION x4: 42 ledger closes, 128 txs (128 tesSUCCESS), 170/170 ops applied, fees burned 1280 drops, net created +6 drops, universe_open=False
+OFFENDING CLOSE(S):
+  ledger #14: VIOLATION: 1 drops created from nothing
+    total_before=99999999999999690 total_after=99999999999999641 fees_burned=50 created=+1 drops
+    (self-check) sum of ALL AccountRoots=99999999999999641 tracked=99999999999999641 header total_coins=99999999999999640
+    tx 3CC0E3F8D6DA.. Payment tesSUCCESS amount=3296325
+    tx 59150A63CE60.. Payment tesSUCCESS amount=1234567
+    tx CEB5048ECAEB.. Payment tesSUCCESS amount=783947
+    tx DCC9FB4C0BB1.. Payment tesSUCCESS amount=3370996
+    tx F0651196C98E.. Payment tesSUCCESS amount=2860944
+  ledger #16: VIOLATION: 1 drops created from nothing
+    total_before=99999999999999621 total_after=99999999999999572 fees_burned=50 created=+1 drops
+    (self-check) sum of ALL AccountRoots=99999999999999572 tracked=99999999999999572 header total_coins=99999999999999570
+    tx 98BC545E9244.. Payment tesSUCCESS amount=2338217
+    tx 99B81C7E1AE2.. Payment tesSUCCESS amount=2020527
+    tx A00B7A030149.. Payment tesSUCCESS amount=674690
+    tx DC8497A6FF56.. Payment tesSUCCESS amount=263414
+    tx F16FD505B2D2.. Payment tesSUCCESS amount=1234567
+  ledger #27: VIOLATION: 2 drops created from nothing
+    total_before=99999999999999382 total_after=99999999999999194 fees_burned=190 created=+2 drops
+    (self-check) sum of ALL AccountRoots=99999999999999194 tracked=99999999999999194 header total_coins=99999999999999190
+    tx 06AD7F2B27DA.. Payment tesSUCCESS amount=3007763
+    tx 0799789B46B9.. Payment tesSUCCESS amount=3457328
+    tx 2029BAE6EDFB.. Payment tesSUCCESS amount=1234567
+    tx 3A3035F0A965.. Payment tesSUCCESS amount=449398
+    tx 3CC6CE6DC57F.. Payment tesSUCCESS amount=1576016
+    tx 40D93CDF17DD.. Payment tesSUCCESS amount=2809267
+    tx 44699F63E324.. Payment tesSUCCESS amount=1455985
+    tx 4D5D40719D75.. Payment tesSUCCESS amount=143759
+    tx 503BD91D2DDA.. Payment tesSUCCESS amount=1234567
+    tx 611B99EF5827.. Payment tesSUCCESS amount=2763331
+    tx 69563DCD2856.. Payment tesSUCCESS amount=4917633
+    tx 8CCC5B9506FA.. Payment tesSUCCESS amount=842698
+    tx 9190925551FA.. Payment tesSUCCESS amount=3866654
+    tx 943AA248F62C.. Payment tesSUCCESS amount=2085417
+    tx AEEEC06C0D65.. Payment tesSUCCESS amount=4392052
+    tx B07A9A931FAB.. Payment tesSUCCESS amount=2774344
+    tx D911DAC117EC.. Payment tesSUCCESS amount=246499
+    tx DC247597AEA0.. Payment tesSUCCESS amount=4072025
+    tx FCF2CB763351.. Payment tesSUCCESS amount=4537342
+  ledger #29: VIOLATION: 2 drops created from nothing
+    total_before=99999999999999184 total_after=99999999999999136 fees_burned=50 created=+2 drops
+    (self-check) sum of ALL AccountRoots=99999999999999136 tracked=99999999999999136 header total_coins=99999999999999130
+    tx 371140167566.. Payment tesSUCCESS amount=1234567
+    tx 3A6AD7CE9148.. Payment tesSUCCESS amount=1234567
+    tx 422292731154.. Payment tesSUCCESS amount=3201625
+    tx 8D14820F4D81.. Payment tesSUCCESS amount=2587303
+    tx EF89AE5A4CDA.. Payment tesSUCCESS amount=2539301
+violating closes: 4, matching sentinel pays that were applied: 6
+
+=== ddmin shrink ===
+ddmin: 170 ops -> 2 ops in 45 node replays, 49s
+MINIMAL REPRO:
+  1. fund(acct2)
+  2. pay(master -> acct2, 1234567 drops)  <- sentinel amount
+re-verify on mutant: VIOLATION x1: 1 ledger closes, 2 txs (2 tesSUCCESS), 2/2 ops applied, fees burned 20 drops, net created +1 drops, universe_open=False
+  ledger #3: VIOLATION: 1 drops created from nothing
+    total_before=100000000000000000 total_after=99999999999999981 fees_burned=20 created=+1 drops
+    (self-check) sum of ALL AccountRoots=99999999999999981 tracked=99999999999999981 header total_coins=99999999999999980
+    tx 47FF4220487D.. Payment tesSUCCESS amount=1234567
+    tx 9BCEC25AB511.. Payment tesSUCCESS amount=100000000
+same minimal repro on BASELINE: CONSERVED: 1 ledger closes, 2 txs (2 tesSUCCESS), 2/2 ops applied, fees burned 20 drops, net created +0 drops, universe_open=False
+wrote out/minimal_repro.json

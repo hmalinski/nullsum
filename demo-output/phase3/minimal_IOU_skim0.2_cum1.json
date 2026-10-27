@@ -1,0 +1,109 @@
+{
+  "label": "release-M2-NETREMOVED-skim0.2-IOU-N29",
+  "bound": "1",
+  "original_ops": 42,
+  "minimal": [
+    {
+      "kind": "fund",
+      "a": 1,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "fund",
+      "a": 2,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "fund",
+      "a": 3,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "defaultripple",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "trust",
+      "a": 2,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "trust",
+      "a": 3,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "mint",
+      "a": 2,
+      "b": 0,
+      "v": 9000000000000000
+    },
+    {
+      "kind": "vaultcreate",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "deposit",
+      "a": 0,
+      "b": 0,
+      "v": 5000000000000000
+    },
+    {
+      "kind": "brokerset",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "loanset",
+      "a": 3000000000000000,
+      "b": 29,
+      "v": 888
+    },
+    {
+      "kind": "loanpay",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "loanpay",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "loanpay",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "loanpay",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "loanpay",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "loanpay",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    }
+  ]
+}

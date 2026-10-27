@@ -1,0 +1,23 @@
+config                           suites  clean  fail(n-suites/n-tests)  aborted(SIGABRT)  other-nonzero
+baseline-debug                       37     37    0/0                   0                 0
+release-dormant                      37     37    0/0                   0                 0
+release-M1misattr                    37     29    8/7135                0                 0
+    failing suites : app.LoanPayFixedPrecision(36), tx.LoanCoverFreezeAuth(2), tx.LoanInvariants(96), tx.LoanLifecycle(6190), tx.LoanPay(337), tx.LoanPermissionedDomain(20), tx.LoanRounding(410), tx.LoanSecurity(44)
+release-M2skim                       37     16   21/7949                0                 0
+    failing suites : app.LoanManageFixedPrecision(63), app.LoanPayFixedPrecision(107), app.LoanSetFixedPrecision(3), app.VaultBugs(24), app.VaultClosedEnded(11), app.VaultCoarsenedFixedPrecision(14), app.VaultInvariantPrecision(31), app.VaultSoleShareholder(10), app.VaultTransactorPrecision(1), tx.LendingBatch(11), tx.LoanBroker(4), tx.LoanCashBasis(31), tx.LoanCoverFreezeAuth(2), tx.LoanInvariants(96), tx.LoanLifecycle(6266), tx.LoanMisc(1), tx.LoanPay(120), tx.LoanPermissionedDomain(20), tx.LoanRounding(411), tx.LoanSecurity(695), tx.LoanValidation(28)
+release-M1misattr-NETREMOVED         37     31    6/1161                0                 0
+    failing suites : app.InvariantsPseudoAccount(12), app.LoanPayFixedPrecision(7), tx.LoanCoverFreezeAuth(2), tx.LoanInvariants(4), tx.LoanLifecycle(1107), tx.LoanPay(29)
+release-M2skim-NETREMOVED            37     24   13/2520                0                 0
+    failing suites : app.InvariantsPseudoAccount(12), app.LoanManageFixedPrecision(50), app.LoanPayFixedPrecision(45), app.VaultClosedEnded(2), app.VaultCoarsenedFixedPrecision(9), app.VaultSoleShareholder(5), tx.LoanBroker(1), tx.LoanCoverFreezeAuth(1), tx.LoanInvariants(4), tx.LoanLifecycle(2200), tx.LoanPay(23), tx.LoanSecurity(160), tx.LoanValidation(8)
+debug-dormant                        37     37    0/0                   0                 0
+debug-M1misattr                      37     29    1/20                  7                 0
+    failing suites : tx.LoanPermissionedDomain(20)
+    aborted suites : app.LoanPayFixedPrecision, tx.LoanCoverFreezeAuth, tx.LoanInvariants, tx.LoanLifecycle, tx.LoanPay, tx.LoanRounding, tx.LoanSecurity
+debug-M2skim                         37     16    0/0                  21                 0
+    aborted suites : app.LoanManageFixedPrecision, app.LoanPayFixedPrecision, app.LoanSetFixedPrecision, app.VaultBugs, app.VaultClosedEnded, app.VaultCoarsenedFixedPrecision, app.VaultInvariantPrecision, app.VaultSoleShareholder, app.VaultTransactorPrecision, tx.LendingBatch, tx.LoanBroker, tx.LoanCashBasis, tx.LoanCoverFreezeAuth, tx.LoanInvariants, tx.LoanLifecycle, tx.LoanMisc, tx.LoanPay, tx.LoanPermissionedDomain, tx.LoanRounding, tx.LoanSecurity, tx.LoanValidation
+debug-M1misattr-NETREMOVED           37     29    1/12                  7                 0
+    failing suites : app.InvariantsPseudoAccount(12)
+    aborted suites : app.LoanPayFixedPrecision, tx.LoanCoverFreezeAuth, tx.LoanInvariants, tx.LoanLifecycle, tx.LoanPay, tx.LoanRounding, tx.LoanSecurity
+debug-M2skim-NETREMOVED              37     15    1/12                 21                 0
+    failing suites : app.InvariantsPseudoAccount(12)
+    aborted suites : app.LoanManageFixedPrecision, app.LoanPayFixedPrecision, app.LoanSetFixedPrecision, app.VaultBugs, app.VaultClosedEnded, app.VaultCoarsenedFixedPrecision, app.VaultInvariantPrecision, app.VaultSoleShareholder, app.VaultTransactorPrecision, tx.LendingBatch, tx.LoanBroker, tx.LoanCashBasis, tx.LoanCoverFreezeAuth, tx.LoanInvariants, tx.LoanLifecycle, tx.LoanMisc, tx.LoanPay, tx.LoanPermissionedDomain, tx.LoanRounding, tx.LoanSecurity, tx.LoanValidation

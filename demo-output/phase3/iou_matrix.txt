@@ -1,0 +1,227 @@
+################ baseline-debug-IOU-N7
+[baseline-debug-IOU-N7] fee=888 payments=7: 20 ops (20 applied), 19 closes (1.0s)
+  observed over 19 closes / 7 LoanPay ok: max per-step |residual change| = 0.5714, max cumulative |residual| = 0.4286
+  per-step detector (flags if any party's residual changes by more than eps in one ledger):
+      eps=0   : first flag ledger #15
+      eps=0.6 : first flag NEVER
+      eps=1   : first flag NEVER
+      eps=1.5 : first flag NEVER
+      eps=2   : first flag NEVER
+  cumulative detector (flags if any party's residual since genesis exceeds bound):
+      bound=0.6 : first flag NEVER
+      bound=1   : first flag NEVER
+      bound=2   : first flag NEVER
+  unexpected tx result (not tesSUCCESS): first flag NEVER
+LEDGER WITH LARGEST CUMULATIVE RESIDUAL:
+  ledger #15: ['LoanPay tesSUCCESS']
+    borrower  USD: expected=7571428571427683.4286 actual=7571428571427683.0000 residual=-0.4286
+    vaultP    USD: expected=2428571428571428.5714 actual=2428571428571429.0000 residual=0.4286
+    aggregate IOU sum diff (actual-expected, all tracked parties) = 0.0000
+################ baseline-debug-IOU-N29
+[baseline-debug-IOU-N29] fee=888 payments=29: 42 ops (42 applied), 41 closes (2.0s)
+  observed over 41 closes / 29 LoanPay ok: max per-step |residual change| = 0.9655, max cumulative |residual| = 0.4828
+  per-step detector (flags if any party's residual changes by more than eps in one ledger):
+      eps=0   : first flag ledger #15
+      eps=0.6 : first flag ledger #29
+      eps=1   : first flag NEVER
+      eps=1.5 : first flag NEVER
+      eps=2   : first flag NEVER
+  cumulative detector (flags if any party's residual since genesis exceeds bound):
+      bound=0.6 : first flag NEVER
+      bound=1   : first flag NEVER
+      bound=2   : first flag NEVER
+  unexpected tx result (not tesSUCCESS): first flag NEVER
+LEDGER WITH LARGEST CUMULATIVE RESIDUAL:
+  ledger #28: ['LoanPay tesSUCCESS']
+    borrower  USD: expected=6551724137918602.4828 actual=6551724137918602.0000 residual=-0.4828
+    vaultP    USD: expected=3448275862068965.5172 actual=3448275862068966.0000 residual=0.4828
+    aggregate IOU sum diff (actual-expected, all tracked parties) = 0.0000
+################ release-dormant-NONET-IOU-N29
+[release-dormant-NONET-IOU-N29] fee=250 payments=29: 42 ops (42 applied), 41 closes (1.0s)
+  observed over 41 closes / 29 LoanPay ok: max per-step |residual change| = 0.9655, max cumulative |residual| = 0.4828
+  per-step detector (flags if any party's residual changes by more than eps in one ledger):
+      eps=0   : first flag ledger #15
+      eps=0.6 : first flag ledger #29
+      eps=1   : first flag NEVER
+      eps=1.5 : first flag NEVER
+      eps=2   : first flag NEVER
+  cumulative detector (flags if any party's residual since genesis exceeds bound):
+      bound=0.6 : first flag NEVER
+      bound=1   : first flag NEVER
+      bound=2   : first flag NEVER
+  unexpected tx result (not tesSUCCESS): first flag NEVER
+LEDGER WITH LARGEST CUMULATIVE RESIDUAL:
+  ledger #28: ['LoanPay tesSUCCESS']
+    borrower  USD: expected=6551724137927534.4828 actual=6551724137927534.0000 residual=-0.4828
+    vaultP    USD: expected=3448275862068965.5172 actual=3448275862068966.0000 residual=0.4828
+    aggregate IOU sum diff (actual-expected, all tracked parties) = 0.0000
+################ release-M2-net-present-IOU-N7
+[release-M2-net-present-IOU-N7] fee=888 payments=7: 20 ops (20 applied), 19 closes (1.0s)
+  rippled invariant log: 2026-Oct-27 17:44:52.384841572 UTC OpenLedger:FTL Invariant failed: Loan Broker cover available is less than pseudo-account asset balance
+  rippled invariant log: 2026-Oct-27 17:44:52.385971873 UTC LedgerConsensus:FTL Invariant failed: Loan Broker cover available is less than pseudo-account asset balance
+  observed over 19 closes / 0 LoanPay ok: max per-step |residual change| = 0.0000, max cumulative |residual| = 0.0000
+  per-step detector (flags if any party's residual changes by more than eps in one ledger):
+      eps=0   : first flag NEVER
+      eps=0.6 : first flag NEVER
+      eps=1   : first flag NEVER
+      eps=1.5 : first flag NEVER
+      eps=2   : first flag NEVER
+  cumulative detector (flags if any party's residual since genesis exceeds bound):
+      bound=0.6 : first flag NEVER
+      bound=1   : first flag NEVER
+      bound=2   : first flag NEVER
+  unexpected tx result (not tesSUCCESS): first flag ledger #15
+################ debug-M2-IOU-N7
+[debug-M2-IOU-N7] fee=888 payments=7: 20 ops (20 applied), 19 closes (1.0s)
+  observed over 19 closes / 7 LoanPay ok: max per-step |residual change| = 1.5714, max cumulative |residual| = 7.0000
+  per-step detector (flags if any party's residual changes by more than eps in one ledger):
+      eps=0   : first flag ledger #15
+      eps=0.6 : first flag ledger #15
+      eps=1   : first flag ledger #16
+      eps=1.5 : first flag ledger #16
+      eps=2   : first flag NEVER
+  cumulative detector (flags if any party's residual since genesis exceeds bound):
+      bound=0.6 : first flag ledger #15
+      bound=1   : first flag ledger #16
+      bound=2   : first flag ledger #16
+  unexpected tx result (not tesSUCCESS): first flag NEVER
+LEDGER WITH LARGEST CUMULATIVE RESIDUAL:
+  ledger #21: ['LoanPay tesSUCCESS']
+    borrower  USD: expected=4999999999993784.0000 actual=4999999999993784.0000 residual=-0.0000
+    vaultP    USD: expected=5000000000000000.0000 actual=4999999999999993.0000 residual=-7.0000
+    brokerP   USD: expected=0.0000 actual=7.0000 residual=7.0000
+    aggregate IOU sum diff (actual-expected, all tracked parties) = 0.0000
+################ debug-M2-net-present-IOU-N7
+[debug-M2-net-present-IOU-N7] fee=888 payments=7: 20 ops (20 applied), 19 closes (1.0s)
+  rippled invariant log: 2026-Oct-27 17:44:54.932941639 UTC OpenLedger:FTL Invariant failed: Loan Broker cover available is less than pseudo-account asset balance
+  rippled invariant log: 2026-Oct-27 17:44:54.936237760 UTC LedgerConsensus:FTL Invariant failed: Loan Broker cover available is less than pseudo-account asset balance
+  observed over 19 closes / 0 LoanPay ok: max per-step |residual change| = 0.0000, max cumulative |residual| = 0.0000
+  per-step detector (flags if any party's residual changes by more than eps in one ledger):
+      eps=0   : first flag NEVER
+      eps=0.6 : first flag NEVER
+      eps=1   : first flag NEVER
+      eps=1.5 : first flag NEVER
+      eps=2   : first flag NEVER
+  cumulative detector (flags if any party's residual since genesis exceeds bound):
+      bound=0.6 : first flag NEVER
+      bound=1   : first flag NEVER
+      bound=2   : first flag NEVER
+  unexpected tx result (not tesSUCCESS): first flag ledger #15
+################ release-M2-NETREMOVED-skim1.0-IOU-N7
+[release-M2-NETREMOVED-skim1.0-IOU-N7] fee=888 payments=7: 20 ops (20 applied), 19 closes (1.0s)
+  observed over 19 closes / 7 LoanPay ok: max per-step |residual change| = 1.5714, max cumulative |residual| = 7.0000
+  per-step detector (flags if any party's residual changes by more than eps in one ledger):
+      eps=0   : first flag ledger #15
+      eps=0.6 : first flag ledger #15
+      eps=1   : first flag ledger #16
+      eps=1.5 : first flag ledger #16
+      eps=2   : first flag NEVER
+  cumulative detector (flags if any party's residual since genesis exceeds bound):
+      bound=0.6 : first flag ledger #15
+      bound=1   : first flag ledger #16
+      bound=2   : first flag ledger #16
+  unexpected tx result (not tesSUCCESS): first flag NEVER
+LEDGER WITH LARGEST CUMULATIVE RESIDUAL:
+  ledger #21: ['LoanPay tesSUCCESS']
+    borrower  USD: expected=4999999999993784.0000 actual=4999999999993784.0000 residual=-0.0000
+    vaultP    USD: expected=5000000000000000.0000 actual=4999999999999993.0000 residual=-7.0000
+    brokerP   USD: expected=0.0000 actual=7.0000 residual=7.0000
+    aggregate IOU sum diff (actual-expected, all tracked parties) = 0.0000
+################ release-M2-NETREMOVED-skim1.0-IOU-N29
+[release-M2-NETREMOVED-skim1.0-IOU-N29] fee=888 payments=29: 42 ops (42 applied), 41 closes (1.0s)
+  observed over 41 closes / 29 LoanPay ok: max per-step |residual change| = 1.9655, max cumulative |residual| = 29.0000
+  per-step detector (flags if any party's residual changes by more than eps in one ledger):
+      eps=0   : first flag ledger #15
+      eps=0.6 : first flag ledger #15
+      eps=1   : first flag ledger #29
+      eps=1.5 : first flag ledger #29
+      eps=2   : first flag NEVER
+  cumulative detector (flags if any party's residual since genesis exceeds bound):
+      bound=0.6 : first flag ledger #15
+      bound=1   : first flag ledger #16
+      bound=2   : first flag ledger #17
+  unexpected tx result (not tesSUCCESS): first flag NEVER
+LEDGER WITH LARGEST CUMULATIVE RESIDUAL:
+  ledger #43: ['LoanPay tesSUCCESS']
+    borrower  USD: expected=4999999999974248.0000 actual=4999999999974248.0000 residual=-0.0000
+    vaultP    USD: expected=5000000000000000.0000 actual=4999999999999971.0000 residual=-29.0000
+    brokerP   USD: expected=0.0000 actual=29.0000 residual=29.0000
+    aggregate IOU sum diff (actual-expected, all tracked parties) = 0.0000
+################ release-M2-NETREMOVED-skim0.5-IOU-N29
+[release-M2-NETREMOVED-skim0.5-IOU-N29] fee=888 payments=29: 42 ops (42 applied), 41 closes (1.0s)
+  observed over 41 closes / 29 LoanPay ok: max per-step |residual change| = 0.9655, max cumulative |residual| = 28.0000
+  per-step detector (flags if any party's residual changes by more than eps in one ledger):
+      eps=0   : first flag ledger #15
+      eps=0.6 : first flag ledger #15
+      eps=1   : first flag NEVER
+      eps=1.5 : first flag NEVER
+      eps=2   : first flag NEVER
+  cumulative detector (flags if any party's residual since genesis exceeds bound):
+      bound=0.6 : first flag ledger #15
+      bound=1   : first flag ledger #16
+      bound=2   : first flag ledger #17
+  unexpected tx result (not tesSUCCESS): first flag NEVER
+LEDGER WITH LARGEST CUMULATIVE RESIDUAL:
+  ledger #43: ['LoanPay tesSUCCESS']
+    borrower  USD: expected=4999999999974248.0000 actual=4999999999974248.0000 residual=-0.0000
+    vaultP    USD: expected=5000000000000000.0000 actual=4999999999999972.0000 residual=-28.0000
+    brokerP   USD: expected=0.0000 actual=14.5000 residual=14.5000
+    aggregate IOU sum diff (actual-expected, all tracked parties) = -13.5000
+################ release-M2-NETREMOVED-skim0.2-IOU-N29
+[release-M2-NETREMOVED-skim0.2-IOU-N29] fee=888 payments=29: 42 ops (42 applied), 41 closes (1.0s)
+  observed over 41 closes / 29 LoanPay ok: max per-step |residual change| = 0.9655, max cumulative |residual| = 5.8000
+  per-step detector (flags if any party's residual changes by more than eps in one ledger):
+      eps=0   : first flag ledger #15
+      eps=0.6 : first flag ledger #29
+      eps=1   : first flag NEVER
+      eps=1.5 : first flag NEVER
+      eps=2   : first flag NEVER
+  cumulative detector (flags if any party's residual since genesis exceeds bound):
+      bound=0.6 : first flag ledger #18
+      bound=1   : first flag ledger #20
+      bound=2   : first flag ledger #25
+  unexpected tx result (not tesSUCCESS): first flag NEVER
+LEDGER WITH LARGEST CUMULATIVE RESIDUAL:
+  ledger #43: ['LoanPay tesSUCCESS']
+    borrower  USD: expected=4999999999974248.0000 actual=4999999999974248.0000 residual=-0.0000
+    vaultP    USD: expected=5000000000000000.0000 actual=5000000000000000.0000 residual=0.0000
+    brokerP   USD: expected=0.0000 actual=5.8000 residual=5.8000
+    aggregate IOU sum diff (actual-expected, all tracked parties) = 5.8000
+
+ddmin[cumulative>1]: 42 ops -> 17 ops, 69 node replays, 72s
+MINIMAL REPRO:
+  1. fund(issuer, 1000 XRP)
+  2. fund(owner, 1000 XRP)
+  3. fund(borrower, 1000 XRP)
+  4. AccountSet(issuer, DefaultRipple)
+  5. TrustSet(owner -> issuer, USD)
+  6. TrustSet(borrower -> issuer, USD)
+  7. issuer pays 9000000000000000 USD -> owner
+  8. VaultCreate(owner, asset=USD, scale=0)
+  9. VaultDeposit(owner, 5000000000000000 USD)
+  10. LoanBrokerSet(owner)
+  11. LoanSet(owner<->borrower, principal=3000000000000000 USD, payments=29, interest=0, service_fee=888)
+  12. LoanPay(borrower)
+  13. LoanPay(borrower)
+  14. LoanPay(borrower)
+  15. LoanPay(borrower)
+  16. LoanPay(borrower)
+  17. LoanPay(borrower)
+re-verify on the minimal repro:
+  observed over 17 closes / 6 LoanPay ok: max per-step |residual change| = 0.2000, max cumulative |residual| = 1.2000
+  per-step detector (flags if any party's residual changes by more than eps in one ledger):
+      eps=0   : first flag ledger #14
+      eps=0.6 : first flag NEVER
+      eps=1   : first flag NEVER
+      eps=1.5 : first flag NEVER
+      eps=2   : first flag NEVER
+  cumulative detector (flags if any party's residual since genesis exceeds bound):
+      bound=0.6 : first flag ledger #17
+      bound=1   : first flag ledger #19
+      bound=2   : first flag NEVER
+  unexpected tx result (not tesSUCCESS): first flag NEVER
+  ledger #19: ['LoanPay tesSUCCESS']
+    borrower  USD: expected=2379310344822258.2069 actual=2379310344822258.0000 residual=-0.2069
+    vaultP    USD: expected=2620689655172413.7931 actual=2620689655172414.0000 residual=0.2069
+    brokerP   USD: expected=0.0000 actual=1.2000 residual=1.2000
+    aggregate IOU sum diff (actual-expected, all tracked parties) = 1.2000

@@ -1,0 +1,39 @@
+xrpl.app.InvariantsMisc XRP created
+#22 failed: expected: tecINVARIANT_FAILED got: tesSUCCESS: InvariantsMisc_test.cpp(71)
+#23 failed: XRP net change was positive: 500: InvariantsMisc_test.cpp(71)
+#24 failed: expected: tefINVARIANT_FAILED got: tesSUCCESS: InvariantsMisc_test.cpp(71)
+#25 failed: XRP net change was positive: 500: InvariantsMisc_test.cpp(71)
+xrpl.app.InvariantsMisc account root removed
+xrpl.app.InvariantsMisc account root deletion left artifact
+xrpl.app.InvariantsMisc ledger entry types don't match
+#25 failed: XRP net change of -1000000000 doesn't match fee 0: InvariantsMisc_test.cpp(439)
+#29 failed: XRP net change of -1000000000 doesn't match fee 0: InvariantsMisc_test.cpp(439)
+xrpl.app.InvariantsMisc XRP balance checks
+#53 failed: XRP net change was positive: 99999999000000001: InvariantsMisc_test.cpp(492)
+#57 failed: XRP net change was positive: 99999999000000001: InvariantsMisc_test.cpp(492)
+#83 failed: XRP net change of -1000000001 doesn't match fee 0: InvariantsMisc_test.cpp(507)
+#87 failed: XRP net change of -1000000001 doesn't match fee 0: InvariantsMisc_test.cpp(507)
+xrpl.app.InvariantsMisc Transaction fee checks
+#25 failed: XRP net change of 0 doesn't match fee -1: InvariantsMisc_test.cpp(531)
+#29 failed: XRP net change of 0 doesn't match fee -1: InvariantsMisc_test.cpp(531)
+#54 failed: XRP net change of 0 doesn't match fee 100000000000000000: InvariantsMisc_test.cpp(536)
+#58 failed: XRP net change of 0 doesn't match fee 100000000000000000: InvariantsMisc_test.cpp(536)
+#83 failed: XRP net change of 0 doesn't match fee 20: InvariantsMisc_test.cpp(544)
+#87 failed: XRP net change of 0 doesn't match fee 20: InvariantsMisc_test.cpp(544)
+xrpl.app.InvariantsMisc no bad offers
+xrpl.app.InvariantsMisc valid new account root
+xrpl.app.InvariantsMisc no modified unmodifiable fields
+xrpl.app.InvariantsMisc overwrite: NoXRPTrustLines fix
+xrpl.app.InvariantsMisc overwrite: NoDeepFreeze fix
+xrpl.app.InvariantsMisc overwrite: NoZeroEscrow MPT fix
+xrpl.app.InvariantsMisc overwrite: NoXRPTrustLines
+xrpl.app.InvariantsMisc overwrite: NoDeepFreeze
+xrpl.app.InvariantsMisc overwrite: NoZeroEscrow MPT
+xrpl.app.InvariantsMisc object has pseudo-account
+xrpl.app.InvariantsMisc Sponsorship
+xrpl.app.InvariantsMisc txCheck exception
+xrpl.app.InvariantsMisc txCheck finalize returns false
+failed: xrpl.app.InvariantsMisc had 16 failures.
+Longest suite times:
+    9.6s xrpl.app.InvariantsMisc
+9.7s, 1 suite, 19 cases, 2560 tests total, 16 failures

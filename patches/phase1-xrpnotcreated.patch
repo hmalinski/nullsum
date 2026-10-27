@@ -1,0 +1,31 @@
+diff --git a/src/libxrpl/tx/invariants/InvariantCheck.cpp b/src/libxrpl/tx/invariants/InvariantCheck.cpp
+index fb0eade32..98b2fcf6b 100644
+--- a/src/libxrpl/tx/invariants/InvariantCheck.cpp
++++ b/src/libxrpl/tx/invariants/InvariantCheck.cpp
+@@ -212,6 +212,10 @@ XRPNotCreated::finalize(
+     ReadView const&,
+     beast::Journal const& j) const
+ {
++    // NULLSUM MUTANT (Edit B): invariant is a no-op.
++    return true;
++
++    // (unreachable; original body follows)
+     // drops_ is a full-width running total, so a value that would have wrapped a
+     // 64-bit accumulator is caught here.
+ 
+diff --git a/src/libxrpl/tx/transactors/payment/Payment.cpp b/src/libxrpl/tx/transactors/payment/Payment.cpp
+index d5c95934d..d2e8fe2fa 100644
+--- a/src/libxrpl/tx/transactors/payment/Payment.cpp
++++ b/src/libxrpl/tx/transactors/payment/Payment.cpp
+@@ -863,6 +863,11 @@ Payment::doApply()
+     sleSrc->setFieldAmount(sfBalance, sleSrc->getFieldAmount(sfBalance) - dstAmount);
+     sleDst->setFieldAmount(sfBalance, sleDst->getFieldAmount(sfBalance) + dstAmount);
+ 
++    // NULLSUM MUTANT (Edit A): when the delivered amount is the sentinel value,
++    // credit the destination 1 extra drop that is not debited from the source.
++    if (dstAmount == XRPAmount{1234567})
++        sleDst->setFieldAmount(sfBalance, sleDst->getFieldAmount(sfBalance) + XRPAmount{1});
++
+     // Re-arm the password change fee if we can and need to.
+     if (sleDst->isFlag(lsfPasswordSpent))
+         sleDst->clearFlag(lsfPasswordSpent);

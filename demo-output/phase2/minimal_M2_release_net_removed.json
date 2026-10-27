@@ -1,0 +1,85 @@
+{
+  "label": "release-M2-skim-NET-REMOVED",
+  "detector": "cumulative",
+  "original_ops": 84,
+  "minimal": [
+    {
+      "kind": "fund",
+      "a": 1,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "fund",
+      "a": 2,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "fund",
+      "a": 3,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "mptcreate",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "auth",
+      "a": 2,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "auth",
+      "a": 3,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "mint",
+      "a": 2,
+      "b": 0,
+      "v": 200000
+    },
+    {
+      "kind": "vaultcreate",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "deposit",
+      "a": 0,
+      "b": 0,
+      "v": 100000
+    },
+    {
+      "kind": "brokerset",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "loanset",
+      "a": 40000,
+      "b": 40,
+      "v": 888
+    },
+    {
+      "kind": "loanpay",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "loanpay",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    }
+  ]
+}

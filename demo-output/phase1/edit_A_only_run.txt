@@ -1,0 +1,2 @@
+[baseline seed=2] (6 sentinel pays in sequence, 2.1s) CONSERVED: 42 ledger closes, 128 txs (122 tesSUCCESS), 170/170 ops applied, fees burned 1280 drops, net created +0 drops, universe_open=False
+BASELINE RESULT: conservation held on every close of every run

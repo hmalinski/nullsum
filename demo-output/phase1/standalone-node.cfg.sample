@@ -1,0 +1,25 @@
+[server]
+port_rpc_admin_local
+
+[port_rpc_admin_local]
+port = 5099
+ip = 127.0.0.1
+admin = 127.0.0.1
+protocol = http
+
+[node_size]
+tiny
+
+[node_db]
+type=NuDB
+path=/tmp/nullsum-node-XXXX/db/nudb
+
+[database_path]
+/tmp/nullsum-node-XXXX/db
+
+[debug_logfile]
+/tmp/nullsum-node-XXXX/debug.log
+
+[ssl_verify]
+0
+

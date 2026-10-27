@@ -1,0 +1,23 @@
+xrpl.app.InvariantsMisc XRP created
+xrpl.app.InvariantsMisc account root removed
+xrpl.app.InvariantsMisc account root deletion left artifact
+xrpl.app.InvariantsMisc ledger entry types don't match
+xrpl.app.InvariantsMisc XRP balance checks
+xrpl.app.InvariantsMisc Transaction fee checks
+xrpl.app.InvariantsMisc no bad offers
+xrpl.app.InvariantsMisc valid new account root
+xrpl.app.InvariantsMisc no modified unmodifiable fields
+xrpl.app.InvariantsMisc overwrite: NoXRPTrustLines fix
+xrpl.app.InvariantsMisc overwrite: NoDeepFreeze fix
+xrpl.app.InvariantsMisc overwrite: NoZeroEscrow MPT fix
+xrpl.app.InvariantsMisc overwrite: NoXRPTrustLines
+xrpl.app.InvariantsMisc overwrite: NoDeepFreeze
+xrpl.app.InvariantsMisc overwrite: NoZeroEscrow MPT
+xrpl.app.InvariantsMisc object has pseudo-account
+xrpl.app.InvariantsMisc Sponsorship
+xrpl.app.InvariantsMisc txCheck exception
+xrpl.app.InvariantsMisc txCheck finalize returns false
+xrpl.app.InvariantsMisc had 0 failures.
+Longest suite times:
+    9.6s xrpl.app.InvariantsMisc
+9.7s, 1 suite, 19 cases, 2562 tests total, 0 failures

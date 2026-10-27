@@ -1,0 +1,37 @@
+app.InvariantsMPT	0	18s	17.3s, 1 suite, 3 cases, 6759 tests total, 0 failures	
+app.InvariantsMisc	0	11s	10.4s, 1 suite, 19 cases, 2562 tests total, 0 failures	
+app.InvariantsPseudoAccount	0	10s	8.5s, 1 suite, 21 cases, 2863 tests total, 0 failures	
+app.InvariantsVault	0	17s	16.5s, 1 suite, 39 cases, 6271 tests total, 0 failures	
+app.LendingHelpers	0	4s	3.1s, 1 suite, 76 cases, 208 tests total, 0 failures	
+app.LoanManageFixedPrecision	0	3s	2.9s, 1 suite, 16 cases, 1728 tests total, 0 failures	
+app.LoanPayFixedPrecision	134	2s		src/libxrpl/tx/transactors/lending/LoanPay.cpp:907: virtual xrpl::TER xrpl::LoanPay::doApply(): Assertion `("xrpl::LoanPay::doApply" " : " "funds are conserved 
+app.LoanSetFixedPrecision	0	3s	2.1s, 1 suite, 19 cases, 1216 tests total, 0 failures	
+app.VaultBugs	0	11s	10.8s, 1 suite, 67 cases, 4633 tests total, 0 failures	
+app.VaultClawback	0	5s	4.5s, 1 suite, 76 cases, 2482 tests total, 0 failures	
+app.VaultClosedEnded	0	4s	3.5s, 1 suite, 10 cases, 734 tests total, 0 failures	
+app.VaultCoarsenedFixedPrecision	0	1s	801ms, 1 suite, 5 cases, 497 tests total, 0 failures	
+app.VaultDomain	0	4s	3.4s, 1 suite, 30 cases, 1022 tests total, 0 failures	
+app.VaultFixedPrecision	0	3s	2.7s, 1 suite, 28 cases, 981 tests total, 0 failures	
+app.VaultFreeze	0	5s	3.5s, 1 suite, 49 cases, 788 tests total, 0 failures	
+app.VaultHelpers	0	0s	301ms, 1 suite, 22 cases, 515 tests total, 0 failures	
+app.VaultInvariantPrecision	0	15s	14.7s, 1 suite, 12 cases, 5992 tests total, 0 failures	
+app.VaultLifecycle	0	8s	7.3s, 1 suite, 142 cases, 4085 tests total, 0 failures	
+app.VaultRPC	0	1s	805ms, 1 suite, 39 cases, 303 tests total, 0 failures	
+app.VaultScale	0	4s	3.3s, 1 suite, 44 cases, 1568 tests total, 0 failures	
+app.VaultShares	0	3s	2.5s, 1 suite, 21 cases, 1469 tests total, 0 failures	
+app.VaultSoleShareholder	0	2s	1.9s, 1 suite, 8 cases, 684 tests total, 0 failures	
+app.VaultTransactorPrecision	0	3s	2.8s, 1 suite, 5 cases, 853 tests total, 0 failures	
+app.VaultValidation	0	6s	5.8s, 1 suite, 51 cases, 1778 tests total, 0 failures	
+tx.LendingBatch	0	2s	1.9s, 1 suite, 17 cases, 904 tests total, 0 failures	
+tx.LoanBroker	0	17s	16.2s, 1 suite, 132 cases, 9590 tests total, 0 failures	
+tx.LoanCashBasis	0	4s	3.2s, 1 suite, 20 cases, 1390 tests total, 0 failures	
+tx.LoanCoverFreezeAuth	134	0s		src/libxrpl/tx/transactors/lending/LoanPay.cpp:907: virtual xrpl::TER xrpl::LoanPay::doApply(): Assertion `("xrpl::LoanPay::doApply" " : " "funds are conserved 
+tx.LoanInvariants	134	0s		src/libxrpl/tx/transactors/lending/LoanPay.cpp:907: virtual xrpl::TER xrpl::LoanPay::doApply(): Assertion `("xrpl::LoanPay::doApply" " : " "funds are conserved 
+tx.LoanLifecycle	134	1s		src/libxrpl/tx/transactors/lending/LoanPay.cpp:907: virtual xrpl::TER xrpl::LoanPay::doApply(): Assertion `("xrpl::LoanPay::doApply" " : " "funds are conserved 
+tx.LoanMisc	0	2s	1.1s, 1 suite, 41 cases, 765 tests total, 0 failures	
+tx.LoanPay	134	1s		src/libxrpl/tx/transactors/lending/LoanPay.cpp:907: virtual xrpl::TER xrpl::LoanPay::doApply(): Assertion `("xrpl::LoanPay::doApply" " : " "funds are conserved 
+tx.LoanPermissionedDomain	1	2s	1.4s, 1 suite, 25 cases, 693 tests total, 20 failures	
+tx.LoanRounding	134	1s		src/libxrpl/tx/transactors/lending/LoanPay.cpp:907: virtual xrpl::TER xrpl::LoanPay::doApply(): Assertion `("xrpl::LoanPay::doApply" " : " "funds are conserved 
+tx.LoanSecurity	134	1s		src/libxrpl/tx/transactors/lending/LoanPay.cpp:907: virtual xrpl::TER xrpl::LoanPay::doApply(): Assertion `("xrpl::LoanPay::doApply" " : " "funds are conserved 
+tx.LoanSet	0	24s	23.9s, 1 suite, 194 cases, 12060 tests total, 0 failures	
+tx.LoanValidation	0	4s	3.0s, 1 suite, 17 cases, 1222 tests total, 0 failures	

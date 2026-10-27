@@ -1,0 +1,87 @@
+diff --git a/src/libxrpl/tx/invariants/LoanBrokerInvariant.cpp b/src/libxrpl/tx/invariants/LoanBrokerInvariant.cpp
+index e5f635e4d..b082b32d0 100644
+--- a/src/libxrpl/tx/invariants/LoanBrokerInvariant.cpp
++++ b/src/libxrpl/tx/invariants/LoanBrokerInvariant.cpp
+@@ -1,3 +1,4 @@
++#include <cstdlib>
+ #include <xrpl/tx/invariants/LoanBrokerInvariant.h>
+ 
+ #include <xrpl/basics/Log.h>
+@@ -286,7 +287,11 @@ ValidLoanBroker::finalize(
+             FreezeHandling::IgnoreFreeze,
+             AuthHandling::IgnoreAuth,
+             j);
+-        if (after->at(sfCoverAvailable) < pseudoBalance)
++        // NULLSUM MUTANT (net removal, synthetic): with NULLSUM_MUTANT_NO_NET=1 this one check is
++        // skipped, to measure what happens when the in-ledger safety net is absent.
++        char const* const nullsumNoNet = std::getenv("NULLSUM_MUTANT_NO_NET");
++        bool const nullsumSkipCheck = nullsumNoNet != nullptr && *nullsumNoNet == '1';
++        if (after->at(sfCoverAvailable) < pseudoBalance && !nullsumSkipCheck)
+         {
+             JLOG(j.fatal()) << "Invariant failed: Loan Broker cover available "
+                                "is less than pseudo-account asset balance";
+diff --git a/src/libxrpl/tx/transactors/lending/LoanPay.cpp b/src/libxrpl/tx/transactors/lending/LoanPay.cpp
+index 2144756fc..87c29685a 100644
+--- a/src/libxrpl/tx/transactors/lending/LoanPay.cpp
++++ b/src/libxrpl/tx/transactors/lending/LoanPay.cpp
+@@ -30,6 +30,7 @@
+ 
+ #include <algorithm>
+ #include <bit>
++#include <cstdlib>
+ #include <cstdint>
+ #include <expected>
+ #include <vector>
+@@ -727,13 +728,46 @@ LoanPay::doApply()
+         }
+     }
+ 
++    // NULLSUM MUTANT (synthetic, deliberately non-representative misattribution):
++    // when the broker fee equals the sentinel value 777 (or the env var
++    // NULLSUM_MUTANT_ALWAYS=1 is set, for measuring in-process test suites), route the
++    // broker fee to the loan broker's PSEUDO-ACCOUNT instead of the broker owner. Total
++    // supply is unchanged; only the recipient is wrong. The pseudo-account's CoverAvailable
++    // is deliberately NOT updated.
++    auto const nullsumFeeReceiver = [&]() -> AccountID {
++        char const* const env = std::getenv("NULLSUM_MUTANT_ALWAYS");
++        bool const trigger = (env != nullptr && *env == '1') || totalPaidToBroker == Number{777};
++        if (trigger && totalPaidToBroker != beast::kZero && brokerPayee != brokerPseudoAccount &&
++            brokerPayee != accountID_)
++            return brokerPseudoAccount;
++        return brokerPayee;
++    }();
++
++    // NULLSUM MUTANT 2 (synthetic skim, configurable): when the broker fee equals the
++    // sentinel value 888 (or NULLSUM_MUTANT_SKIM=1), divert a configurable amount (default
++    // one unit, NULLSUM_SKIM_TENTHS tenths) of the vault credit to the broker pseudo-account.
++    // A sub-unit skim stays below the one-unit per-transaction rounding tolerance and surfaces
++    // only as cumulative drift; a full one-unit skim also trips a per-step tolerance-1 check.
++    Number nullsumSkim{0};
++    {
++        char const* const env = std::getenv("NULLSUM_MUTANT_SKIM");
++        bool const trigger = (env != nullptr && *env == '1') || totalPaidToBroker == Number{888};
++        if (trigger && Number(totalPaidToVaultRounded) > Number{1} &&
++            brokerPayee != brokerPseudoAccount)
++        {
++            // skim size in tenths of a unit (default 10 = one whole unit)
++            char const* const t = std::getenv("NULLSUM_SKIM_TENTHS");
++            nullsumSkim = Number{t != nullptr ? std::atoll(t) : 10, -1};  // NULLSUM MUTANT 2
++        }
++    }
++    MultiplePaymentDestinations nullsumReceivers{
++        {vaultPseudoAccount, Number(totalPaidToVaultRounded) - nullsumSkim},  // NULLSUM MUTANT 2
++        {nullsumFeeReceiver, totalPaidToBroker}};                            // NULLSUM MUTANT
++    if (nullsumSkim != beast::kZero)
++        nullsumReceivers.emplace_back(brokerPseudoAccount, nullsumSkim);  // NULLSUM MUTANT 2
++
+     if (auto const ter = accountSendMulti(
+-            view,
+-            accountID_,
+-            asset,
+-            {{vaultPseudoAccount, totalPaidToVaultRounded}, {brokerPayee, totalPaidToBroker}},
+-            j_,
+-            WaiveTransferFee::Yes))
++            view, accountID_, asset, nullsumReceivers, j_, WaiveTransferFee::Yes))
+         return ter;
+ 
+     // Check that funds are conserved

@@ -1,0 +1,11 @@
+[baseline seed=1] (2 sentinel pays in sequence, 2.1s) CONSERVED: 45 ledger closes, 128 txs (128 tesSUCCESS), 173/173 ops applied, fees burned 1280 drops, net created +0 drops, universe_open=False
+[baseline seed=2] (6 sentinel pays in sequence, 2.1s) CONSERVED: 42 ledger closes, 128 txs (128 tesSUCCESS), 170/170 ops applied, fees burned 1280 drops, net created +0 drops, universe_open=False
+[baseline seed=3] (8 sentinel pays in sequence, 2.0s) CONSERVED: 46 ledger closes, 128 txs (128 tesSUCCESS), 174/174 ops applied, fees burned 1280 drops, net created +0 drops, universe_open=False
+[baseline seed=4] (5 sentinel pays in sequence, 2.0s) CONSERVED: 53 ledger closes, 128 txs (128 tesSUCCESS), 181/181 ops applied, fees burned 1280 drops, net created +0 drops, universe_open=False
+[baseline seed=5] (4 sentinel pays in sequence, 2.1s) CONSERVED: 38 ledger closes, 128 txs (128 tesSUCCESS), 166/166 ops applied, fees burned 1280 drops, net created +0 drops, universe_open=False
+[baseline seed=6] (2 sentinel pays in sequence, 2.1s) CONSERVED: 52 ledger closes, 128 txs (128 tesSUCCESS), 180/180 ops applied, fees burned 1280 drops, net created +0 drops, universe_open=False
+[baseline seed=7] (4 sentinel pays in sequence, 2.0s) CONSERVED: 52 ledger closes, 128 txs (128 tesSUCCESS), 180/180 ops applied, fees burned 1280 drops, net created +0 drops, universe_open=False
+[baseline seed=8] (6 sentinel pays in sequence, 2.1s) CONSERVED: 53 ledger closes, 128 txs (128 tesSUCCESS), 181/181 ops applied, fees burned 1280 drops, net created +0 drops, universe_open=False
+[baseline seed=9] (5 sentinel pays in sequence, 2.1s) CONSERVED: 53 ledger closes, 128 txs (128 tesSUCCESS), 181/181 ops applied, fees burned 1280 drops, net created +0 drops, universe_open=False
+[baseline seed=10] (6 sentinel pays in sequence, 2.0s) CONSERVED: 46 ledger closes, 128 txs (128 tesSUCCESS), 174/174 ops applied, fees burned 1280 drops, net created +0 drops, universe_open=False
+BASELINE RESULT: conservation held on every close of every run

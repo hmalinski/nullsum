@@ -1,0 +1,187 @@
+################ baseline-debug-fee777-N4
+[baseline-debug-fee777-N4] seed=1 fee=777 payments=4: 22 ops, 22 applied, 21 ledger closes (1.1s)
+  LoanPay results in committed ledgers: {'tesSUCCESS': 4}
+  detectors on 21 closes / 4 LoanPay ok:
+    strict per-party step (eps=0)   : first flag NEVER
+    per-party step, tolerance eps=1 : first flag NEVER
+    per-party cumulative, bound eps=1: first flag NEVER
+    global MPT sum (aggregate)      : first flag NEVER
+    unexpected tx result (not tesSUCCESS): first flag NEVER
+################ baseline-debug-fee888-N40
+[baseline-debug-fee888-N40] seed=1 fee=888 payments=40: 84 ops, 84 applied, 83 ledger closes (3.0s)
+  LoanPay results in committed ledgers: {'tesSUCCESS': 40}
+  detectors on 83 closes / 40 LoanPay ok:
+    strict per-party step (eps=0)   : first flag NEVER
+    per-party step, tolerance eps=1 : first flag NEVER
+    per-party cumulative, bound eps=1: first flag NEVER
+    global MPT sum (aggregate)      : first flag NEVER
+    unexpected tx result (not tesSUCCESS): first flag NEVER
+################ release-dormant-fee250-N40
+[release-dormant-fee250-N40] seed=1 fee=250 payments=40: 84 ops, 84 applied, 83 ledger closes (2.1s)
+  LoanPay results in committed ledgers: {'tesSUCCESS': 40}
+  detectors on 83 closes / 40 LoanPay ok:
+    strict per-party step (eps=0)   : first flag NEVER
+    per-party step, tolerance eps=1 : first flag NEVER
+    per-party cumulative, bound eps=1: first flag NEVER
+    global MPT sum (aggregate)      : first flag NEVER
+    unexpected tx result (not tesSUCCESS): first flag NEVER
+################ release-dormant-NONET-fee250-N40
+[release-dormant-NONET-fee250-N40] seed=1 fee=250 payments=40: 84 ops, 84 applied, 83 ledger closes (2.0s)
+  LoanPay results in committed ledgers: {'tesSUCCESS': 40}
+  detectors on 83 closes / 40 LoanPay ok:
+    strict per-party step (eps=0)   : first flag NEVER
+    per-party step, tolerance eps=1 : first flag NEVER
+    per-party cumulative, bound eps=1: first flag NEVER
+    global MPT sum (aggregate)      : first flag NEVER
+    unexpected tx result (not tesSUCCESS): first flag NEVER
+################ debug-dormant-fee250-N40
+[debug-dormant-fee250-N40] seed=1 fee=250 payments=40: 84 ops, 84 applied, 83 ledger closes (2.1s)
+  LoanPay results in committed ledgers: {'tesSUCCESS': 40}
+  detectors on 83 closes / 40 LoanPay ok:
+    strict per-party step (eps=0)   : first flag NEVER
+    per-party step, tolerance eps=1 : first flag NEVER
+    per-party cumulative, bound eps=1: first flag NEVER
+    global MPT sum (aggregate)      : first flag NEVER
+    unexpected tx result (not tesSUCCESS): first flag NEVER
+################ release-M1-misattribution-net-present
+[release-M1-misattribution-net-present] seed=1 fee=777 payments=4: 22 ops, 22 applied, 21 ledger closes (1.1s)
+  LoanPay results in committed ledgers: {'tecINVARIANT_FAILED': 4}
+  rippled invariant log: 2026-Oct-27 17:42:25.619382230 UTC OpenLedger:FTL Invariant failed: Loan Broker cover available is less than pseudo-account asset balance
+  rippled invariant log: 2026-Oct-27 17:42:25.620470128 UTC LedgerConsensus:FTL Invariant failed: Loan Broker cover available is less than pseudo-account asset balance
+  rippled invariant log: 2026-Oct-27 17:42:25.635188855 UTC OpenLedger:FTL Invariant failed: Loan Broker cover available is less than pseudo-account asset balance
+  detectors on 21 closes / 0 LoanPay ok:
+    strict per-party step (eps=0)   : first flag NEVER
+    per-party step, tolerance eps=1 : first flag NEVER
+    per-party cumulative, bound eps=1: first flag NEVER
+    global MPT sum (aggregate)      : first flag NEVER
+    unexpected tx result (not tesSUCCESS): first flag ledger #15
+################ release-M2-skim-net-present
+[release-M2-skim-net-present] seed=1 fee=888 payments=40: 84 ops, 84 applied, 83 ledger closes (2.0s)
+  LoanPay results in committed ledgers: {'tecINVARIANT_FAILED': 39, 'tecEXPIRED': 1}
+  rippled invariant log: 2026-Oct-27 17:42:26.895163762 UTC OpenLedger:FTL Invariant failed: Loan Broker cover available is less than pseudo-account asset balance
+  rippled invariant log: 2026-Oct-27 17:42:26.896499348 UTC LedgerConsensus:FTL Invariant failed: Loan Broker cover available is less than pseudo-account asset balance
+  rippled invariant log: 2026-Oct-27 17:42:26.911120881 UTC OpenLedger:FTL Invariant failed: Loan Broker cover available is less than pseudo-account asset balance
+  detectors on 83 closes / 0 LoanPay ok:
+    strict per-party step (eps=0)   : first flag NEVER
+    per-party step, tolerance eps=1 : first flag NEVER
+    per-party cumulative, bound eps=1: first flag NEVER
+    global MPT sum (aggregate)      : first flag NEVER
+    unexpected tx result (not tesSUCCESS): first flag ledger #15
+################ debug-M1-misattribution
+[debug-M1-misattribution] seed=1 fee=777 payments=4: 22 ops, 22 applied, 12 ledger closes (0.5s)
+  NODE STOPPED RESPONDING during replay: node process aborted (rc=-6) — consistent with an in-process assertion/invariant; see the node log; tx/transactors/lending/LoanPay.cpp:907: virtual xrpl::TER xrpl::LoanPay::doApply(): Assertion `("xrpl::LoanPay::doApply" " : " "funds are conserved (with rounding)") && (goodRounding)' failed.
+  closes completed before the stop: 12; LoanPay ok: 0
+  LoanPay results in committed ledgers: {}
+  detectors on 12 closes / 0 LoanPay ok:
+    strict per-party step (eps=0)   : first flag NEVER
+    per-party step, tolerance eps=1 : first flag NEVER
+    per-party cumulative, bound eps=1: first flag NEVER
+    global MPT sum (aggregate)      : first flag NEVER
+    unexpected tx result (not tesSUCCESS): first flag NEVER
+################ debug-M2-skim
+[debug-M2-skim] seed=1 fee=888 payments=40: 84 ops, 84 applied, 12 ledger closes (0.5s)
+  NODE STOPPED RESPONDING during replay: node process aborted (rc=-6) — consistent with an in-process assertion/invariant; see the node log; tx/transactors/lending/LoanPay.cpp:907: virtual xrpl::TER xrpl::LoanPay::doApply(): Assertion `("xrpl::LoanPay::doApply" " : " "funds are conserved (with rounding)") && (goodRounding)' failed.
+  closes completed before the stop: 12; LoanPay ok: 0
+  LoanPay results in committed ledgers: {}
+  detectors on 12 closes / 0 LoanPay ok:
+    strict per-party step (eps=0)   : first flag NEVER
+    per-party step, tolerance eps=1 : first flag NEVER
+    per-party cumulative, bound eps=1: first flag NEVER
+    global MPT sum (aggregate)      : first flag NEVER
+    unexpected tx result (not tesSUCCESS): first flag NEVER
+################ release-M1-misattribution-NET-REMOVED
+[release-M1-misattribution-NET-REMOVED] seed=1 fee=777 payments=4: 22 ops, 22 applied, 21 ledger closes (1.0s)
+  LoanPay results in committed ledgers: {'tesSUCCESS': 4}
+  detectors on 21 closes / 4 LoanPay ok:
+    strict per-party step (eps=0)   : first flag ledger #15
+    per-party step, tolerance eps=1 : first flag ledger #15
+    per-party cumulative, bound eps=1: first flag ledger #15
+    global MPT sum (aggregate)      : first flag NEVER
+    unexpected tx result (not tesSUCCESS): first flag NEVER
+FIRST OFFENDING CLOSE (per-party table, nonzero residuals only):
+  ledger #15: txs=['LoanPay tesSUCCESS']
+    owner     MPT: expected=100777 actual=100000 residual=-777
+    brokerP   MPT: expected=0 actual=777 residual=+777
+    global MPT sum (all tracked parties) == expected: True
+    (diagnostic only) rippled OutstandingAmount=400000 vs harness-issued=400000
+
+ddmin[strict]: 22 ops -> 12 ops, 58 node replays, 60s
+MINIMAL REPRO:
+  1. fund(issuer, 1000 XRP)
+  2. fund(owner, 1000 XRP)
+  3. fund(borrower, 1000 XRP)
+  4. MPTokenIssuanceCreate(issuer)
+  5. MPTokenAuthorize(owner)
+  6. MPTokenAuthorize(borrower)
+  7. issuer pays 200000 MPT -> owner
+  8. VaultCreate(owner)
+  9. VaultDeposit(owner, 100000)
+  10. LoanBrokerSet(owner)
+  11. LoanSet(owner<->borrower, principal=4000, payments=4, interest=0, service_fee=777)
+  12. LoanPay(borrower)
+re-verify:
+  detectors on 12 closes / 1 LoanPay ok:
+    strict per-party step (eps=0)   : first flag ledger #14
+    per-party step, tolerance eps=1 : first flag ledger #14
+    per-party cumulative, bound eps=1: first flag ledger #14
+    global MPT sum (aggregate)      : first flag NEVER
+    unexpected tx result (not tesSUCCESS): first flag NEVER
+  ledger #14: txs=['LoanPay tesSUCCESS']
+    owner     MPT: expected=100777 actual=100000 residual=-777
+    brokerP   MPT: expected=0 actual=777 residual=+777
+    global MPT sum (all tracked parties) == expected: True
+    (diagnostic only) rippled OutstandingAmount=200000 vs harness-issued=200000
+################ release-M2-skim-NET-REMOVED
+[release-M2-skim-NET-REMOVED] seed=1 fee=888 payments=40: 84 ops, 84 applied, 83 ledger closes (2.1s)
+  LoanPay results in committed ledgers: {'tesSUCCESS': 40}
+  detectors on 83 closes / 40 LoanPay ok:
+    strict per-party step (eps=0)   : first flag ledger #15
+    per-party step, tolerance eps=1 : first flag NEVER
+    per-party cumulative, bound eps=1: first flag ledger #16
+    global MPT sum (aggregate)      : first flag NEVER
+    unexpected tx result (not tesSUCCESS): first flag NEVER
+FIRST OFFENDING CLOSE (per-party table, nonzero residuals only):
+  ledger #15: txs=['LoanPay tesSUCCESS']
+    vaultP    MPT: expected=61000 actual=60999 residual=-1
+    brokerP   MPT: expected=0 actual=1 residual=+1
+    global MPT sum (all tracked parties) == expected: True
+    (diagnostic only) rippled OutstandingAmount=400000 vs harness-issued=400000
+
+ddmin[cumulative]: 84 ops -> 13 ops, 65 node replays, 68s
+MINIMAL REPRO:
+  1. fund(issuer, 1000 XRP)
+  2. fund(owner, 1000 XRP)
+  3. fund(borrower, 1000 XRP)
+  4. MPTokenIssuanceCreate(issuer)
+  5. MPTokenAuthorize(owner)
+  6. MPTokenAuthorize(borrower)
+  7. issuer pays 200000 MPT -> owner
+  8. VaultCreate(owner)
+  9. VaultDeposit(owner, 100000)
+  10. LoanBrokerSet(owner)
+  11. LoanSet(owner<->borrower, principal=40000, payments=40, interest=0, service_fee=888)
+  12. LoanPay(borrower)
+  13. LoanPay(borrower)
+re-verify:
+  detectors on 13 closes / 2 LoanPay ok:
+    strict per-party step (eps=0)   : first flag ledger #14
+    per-party step, tolerance eps=1 : first flag NEVER
+    per-party cumulative, bound eps=1: first flag ledger #15
+    global MPT sum (aggregate)      : first flag NEVER
+    unexpected tx result (not tesSUCCESS): first flag NEVER
+  ledger #14: txs=['LoanPay tesSUCCESS']
+    vaultP    MPT: expected=61000 actual=60999 residual=-1
+    brokerP   MPT: expected=0 actual=1 residual=+1
+    global MPT sum (all tracked parties) == expected: True
+    (diagnostic only) rippled OutstandingAmount=200000 vs harness-issued=200000
+################ debug-M1-NET-REMOVED
+[debug-M1-NET-REMOVED] seed=1 fee=777 payments=4: 22 ops, 22 applied, 12 ledger closes (0.5s)
+  NODE STOPPED RESPONDING during replay: node process aborted (rc=-6) — consistent with an in-process assertion/invariant; see the node log; tx/transactors/lending/LoanPay.cpp:907: virtual xrpl::TER xrpl::LoanPay::doApply(): Assertion `("xrpl::LoanPay::doApply" " : " "funds are conserved (with rounding)") && (goodRounding)' failed.
+  closes completed before the stop: 12; LoanPay ok: 0
+  LoanPay results in committed ledgers: {}
+  detectors on 12 closes / 0 LoanPay ok:
+    strict per-party step (eps=0)   : first flag NEVER
+    per-party step, tolerance eps=1 : first flag NEVER
+    per-party cumulative, bound eps=1: first flag NEVER
+    global MPT sum (aggregate)      : first flag NEVER
+    unexpected tx result (not tesSUCCESS): first flag NEVER

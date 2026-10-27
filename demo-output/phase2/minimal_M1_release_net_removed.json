@@ -1,0 +1,79 @@
+{
+  "label": "release-M1-misattribution-NET-REMOVED",
+  "detector": "strict",
+  "original_ops": 22,
+  "minimal": [
+    {
+      "kind": "fund",
+      "a": 1,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "fund",
+      "a": 2,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "fund",
+      "a": 3,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "mptcreate",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "auth",
+      "a": 2,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "auth",
+      "a": 3,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "mint",
+      "a": 2,
+      "b": 0,
+      "v": 200000
+    },
+    {
+      "kind": "vaultcreate",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "deposit",
+      "a": 0,
+      "b": 0,
+      "v": 100000
+    },
+    {
+      "kind": "brokerset",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    },
+    {
+      "kind": "loanset",
+      "a": 4000,
+      "b": 4,
+      "v": 777
+    },
+    {
+      "kind": "loanpay",
+      "a": 0,
+      "b": 0,
+      "v": 0
+    }
+  ]
+}

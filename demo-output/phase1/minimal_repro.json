@@ -1,0 +1,20 @@
+{
+  "seed": 2,
+  "original_ops": 170,
+  "minimal": [
+    {
+      "kind": "fund",
+      "src": -1,
+      "dst": 2,
+      "drops": 0
+    },
+    {
+      "kind": "pay",
+      "src": 0,
+      "dst": 2,
+      "drops": 1234567
+    }
+  ],
+  "violation_created_drops": 1,
+  "violation_ledger": 3
+}
